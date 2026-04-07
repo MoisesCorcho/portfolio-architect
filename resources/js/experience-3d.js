@@ -12,33 +12,28 @@ export class Experience3D {
         if (!this.container) return;
 
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         
-        this.model = null;
-        this.mixer = null; // Para posibles animaciones del GLB
-        this.clock = new THREE.Clock();
-
         this.init();
     }
 
     init() {
-        // Config Renderer
         this.renderer.setSize(window.innerWidth, window.innerHeight);
         this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-        this.renderer.setClearColor(0x000000, 0); // Transparente
+        this.renderer.setClearColor(0x000000, 0);
         this.container.appendChild(this.renderer.domElement);
 
-        // Iluminación
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+        // Iluminación básica
+        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
         this.scene.add(ambientLight);
 
-        const sunLight = new THREE.DirectionalLight(0xffffff, 1.2);
-        sunLight.position.set(50, 50, 50);
+        const sunLight = new THREE.DirectionalLight(0xffffff, 1);
+        sunLight.position.set(5, 10, 5);
         this.scene.add(sunLight);
 
-        // Cámara Inicial
-        this.camera.position.set(80, 50, 150);
+        // Posición Inicial de cámara (Afuera)
+        this.camera.position.set(100, 50, 150);
         this.camera.lookAt(0, 0, 0);
 
         this.loadModel();
@@ -49,34 +44,23 @@ export class Experience3D {
     loadModel() {
         const loader = new GLTFLoader();
         const dracoLoader = new DRACOLoader();
-        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/'); // CDN por comodidad
+        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
         loader.setDRACOLoader(dracoLoader);
 
-        // Ajustá la ruta según donde guardes el .glb (ej: public/models/modern_home.glb)
         loader.load('/models/modern_home.glb', (gltf) => {
-            this.model = gltf.scene;
+            const model = gltf.scene;
+            this.scene.add(model);
             
-            // --- CRÍTICO: AUTO-ESCALADO ---
-            const box = new THREE.Box3().setFromObject(this.model);
-            const size = new THREE.Vector3();
-            box.getSize(size);
-            const center = new THREE.Vector3();
-            box.getCenter(center);
-
-            // Queremos que mida aprox 100 unidades de largo
-            const maxDim = Math.max(size.x, size.y, size.z);
-            const scaleFactor = 100 / maxDim;
-            this.model.scale.set(scaleFactor, scaleFactor, scaleFactor);
-
-            // Centrar el modelo en (0,0,0)
-            this.model.position.sub(center.multiplyScalar(scaleFactor));
+            // Auto-escalado a 100 unidades (IMPORTANTE)
+            const box = new THREE.Box3().setFromObject(model);
+            const size = box.getSize(new THREE.Vector3());
+            const center = box.getCenter(new THREE.Vector3());
+            const scale = 100 / Math.max(size.x, size.y, size.z);
             
-            this.scene.add(this.model);
+            model.scale.set(scale, scale, scale);
+            model.position.sub(center.multiplyScalar(scale));
             
-            // Una vez cargado, configuramos el scroll
             this.setupScrollAnimations();
-        }, undefined, (error) => {
-            console.error('Error cargando el modelo:', error);
         });
     }
 
@@ -86,27 +70,14 @@ export class Experience3D {
                 trigger: "body",
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 1, // Suavizado del movimiento
+                scrub: 1,
             }
         });
 
-        // Definimos posiciones de cámara según IDs de secciones
-        // Estos valores son ejemplos, vas a tener que ajustarlos según tu modelo
-        tl.to(this.camera.position, {
-            x: -120, y: 40, z: 80, // Hacia "About"
-            onUpdate: () => this.camera.lookAt(0, 0, 0),
-            scrollTrigger: { trigger: "#about", start: "top bottom", end: "top top", scrub: true }
-        })
-        .to(this.camera.position, {
-            x: 0, y: 150, z: 50, // Hacia "Portfolio" (vista desde arriba)
-            onUpdate: () => this.camera.lookAt(0, 0, 0),
-            scrollTrigger: { trigger: "#portfolio", start: "top bottom", end: "top top", scrub: true }
-        })
-        .to(this.camera.position, {
-            x: 100, y: 20, z: -100, // Hacia "Contact"
-            onUpdate: () => this.camera.lookAt(0, 0, 0),
-            scrollTrigger: { trigger: "#contact", start: "top bottom", end: "top top", scrub: true }
-        });
+        // 1. A unos valores "por defecto" para probar que el scroll anda
+        tl.to(this.camera.position, { x: -80, y: 30, z: 100, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "about")
+          .to(this.camera.position, { x: 50, y: 150, z: 20, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "portfolio")
+          .to(this.camera.position, { x: 120, y: 20, z: -80, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "contact");
     }
 
     setupEvents() {

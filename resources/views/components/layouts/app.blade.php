@@ -13,7 +13,7 @@
 </head>
 <body class="bg-white dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#EDEDEC] font-sans selection:bg-[#FF4433] selection:text-white">
     
-    <!-- Contenedor 3D Fijo -->
+    <!-- Contenedor 3D Fijo al fondo -->
     <div id="three-container" class="fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
 
     <!-- Navegación -->
