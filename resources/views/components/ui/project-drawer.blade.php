@@ -25,7 +25,9 @@
                     <h2 id="drawer-title" class="text-4xl lg:text-7xl font-display font-bold leading-tight drawer-text text-white">Minimalist Sanctuary</h2>
                 </div>
                 
-                <div class="space-y-6 text-lg text-white/70 font-sans leading-relaxed">
+                <!-- Drawer Section: Project Info -->
+                <div id="drawer-project-content" class="drawer-section">
+                    <div class="space-y-6 text-lg text-white/70 font-sans leading-relaxed">
                     <div class="overflow-hidden">
                         <p class="drawer-text">El espacio arquitectónico no es simplemente un vacío delimitado, sino un volumen activo y lleno de significado. Este proyecto explora la intersección entre la materialidad cruda y la luz natural, esculpiendo un refugio que desafía la percepción tradicional del habitar.</p>
                     </div>
@@ -78,7 +80,30 @@
                             <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Gallery Image 3" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300 drawer-text" style="filter: hue-rotate(90deg) brightness(0.8);">
                         </div>
                     </div>
+                    </div>
                 </div>
+
+                <!-- Drawer Section: About Info -->
+                <div id="drawer-about-content" class="drawer-section hidden">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <div class="overflow-hidden rounded-3xl aspect-[4/5] bg-white/5 relative">
+                             <!-- User can change this portrait image later -->
+                             <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Architect Portrait" class="absolute inset-0 w-full h-full object-cover drawer-text grayscale hover:grayscale-0 transition-all duration-700">
+                        </div>
+                        <div class="space-y-6">
+                            <div class="overflow-hidden">
+                                <h3 class="text-3xl lg:text-4xl font-display font-bold drawer-text text-white">Sobre El Estudio</h3>
+                            </div>
+                            <div class="overflow-hidden">
+                                <p class="text-lg text-white/70 font-sans leading-relaxed drawer-text">Creemos firmemente en el poder transformador de la arquitectura. Cada línea que trazamos y cada material que elegimos tiene el propósito de conectar a las personas con su entorno, generando espacios introspectivos, sostenibles y sumamente habitables.</p>
+                            </div>
+                            <div class="overflow-hidden mt-6">
+                                <p class="text-lg text-white/70 font-sans leading-relaxed drawer-text">Con más de 15 años de experiencia internacional, hemos diseñado proyectos que trascienden modas pasajeras, buscando una pureza estética que resista el polvo del tiempo. Desde grandes centros urbanos hasta retiros remotos y en silencio, nuestro compromiso es con la materia.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

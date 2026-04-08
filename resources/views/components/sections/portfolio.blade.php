@@ -11,7 +11,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
             
             <!-- Bento Item 1 (Large) -->
-            <div class="bento-item group md:col-span-2 md:row-span-2 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="1" data-drawer-trigger="true" data-drawer-title="Minimalist Sanctuary" data-drawer-subtitle="Residential • Tokyo">
+            <div class="bento-item group md:col-span-2 md:row-span-2 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="1" data-drawer-trigger="true" data-drawer-type="project" data-drawer-title="Minimalist Sanctuary" data-drawer-subtitle="Residential • Tokyo">
                 <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Minimalist Sanctuary" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-80" onerror="this.style.display='none'">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10"></div>
                 <div class="absolute bottom-0 left-0 p-8 z-20 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
@@ -22,7 +22,7 @@
             </div>
 
             <!-- Bento Item 2 (Tall) -->
-            <div class="bento-item group md:col-span-1 md:row-span-2 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="2" data-drawer-trigger="true" data-drawer-title="Urban Glass" data-drawer-subtitle="Commercial • NY">
+            <div class="bento-item group md:col-span-1 md:row-span-2 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="2" data-drawer-trigger="true" data-drawer-type="project" data-drawer-title="Urban Glass" data-drawer-subtitle="Commercial • NY">
                 <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Urban Glass" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-80" onerror="this.style.display='none'">
                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
                 <div class="absolute bottom-0 left-0 p-6 z-20">
@@ -44,7 +44,7 @@
             </div>
 
             <!-- Bento Item 4 -->
-            <div class="bento-item group lg:col-span-1 lg:row-span-1 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="4" data-drawer-trigger="true" data-drawer-title="Concrete Loft" data-drawer-subtitle="Residential • Berlin">
+            <div class="bento-item group lg:col-span-1 lg:row-span-1 relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" data-project="4" data-drawer-trigger="true" data-drawer-type="project" data-drawer-title="Concrete Loft" data-drawer-subtitle="Residential • Berlin">
                  <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Concrete Loft" class="absolute inset-0 w-full h-full object-cover z-0 transition-transform duration-700 group-hover:scale-110 opacity-80" onerror="this.style.display='none'">
                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent z-10"></div>
                  <div class="absolute bottom-0 left-0 p-6 z-20">

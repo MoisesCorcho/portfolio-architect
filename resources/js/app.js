@@ -69,11 +69,12 @@ function initDrawerAnimations() {
             // Populate data
             const title = trigger.getAttribute('data-drawer-title');
             const subtitle = trigger.getAttribute('data-drawer-subtitle');
+            const type = trigger.getAttribute('data-drawer-type') || 'project';
             
             if (title && drawerTitle) drawerTitle.textContent = title;
             if (subtitle && drawerSubtitle) drawerSubtitle.textContent = subtitle;
 
-            openDrawer();
+            openDrawer(type);
         });
     });
 
@@ -81,8 +82,13 @@ function initDrawerAnimations() {
         closeBtn.addEventListener('click', closeDrawer);
     }
 
-    function openDrawer() {
+    function openDrawer(type = 'project') {
         if (isOpen) return;
+
+        // Toggle sections based on type
+        document.querySelectorAll('.drawer-section').forEach(section => section.classList.add('hidden'));
+        const targetSection = document.getElementById(`drawer-${type}-content`);
+        if (targetSection) targetSection.classList.remove('hidden');
         isOpen = true;
 
         // Dispatch open event for Three.js
