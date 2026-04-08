@@ -35,7 +35,7 @@
                 </div>
 
                 <!-- Stats/Extra Info Demo -->
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/10 pt-12 mt-12">
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 border-t border-white/10 pt-12 mt-12 mb-12">
                     <div class="overflow-hidden">
                         <div class="drawer-text">
                             <span class="block text-xs font-mono text-white/50 mb-2">Location</span>
@@ -61,6 +61,24 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Project Gallery -->
+                <div class="border-t border-white/10 pt-12 pb-8">
+                    <div class="overflow-hidden mb-8">
+                        <h3 class="text-2xl font-display font-bold drawer-text">Project Gallery</h3>
+                    </div>
+                    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="overflow-hidden rounded-xl bg-white/5 aspect-[4/3] group cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Gallery Image 1" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300 drawer-text">
+                        </div>
+                        <div class="overflow-hidden rounded-xl bg-white/5 aspect-[4/3] group cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Gallery Image 2" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300 drawer-text" style="filter: hue-rotate(45deg);">
+                        </div>
+                        <div class="overflow-hidden rounded-xl bg-white/5 aspect-[4/3] group cursor-pointer" onclick="openLightbox(this.querySelector('img').src)">
+                            <img src="{{ asset('build/images/buildings/placeholder/building1.jpg') }}" alt="Gallery Image 3" class="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300 drawer-text" style="filter: hue-rotate(90deg) brightness(0.8);">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -82,3 +100,40 @@
     background: rgba(255, 255, 255, 0.4);
 }
 </style>
+
+<!-- Lightbox Modal -->
+<div id="lightbox" class="fixed inset-0 z-[60] bg-black/95 items-center justify-center hidden opacity-0 transition-opacity duration-300 backdrop-blur-md">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 lg:top-10 lg:right-10 text-white/60 hover:text-white transition-colors p-3 bg-white/5 hover:bg-white/10 rounded-full">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <img id="lightbox-img" src="" alt="Fullscreen Preview" class="max-w-[95vw] max-h-[95vh] lg:max-w-[90vw] lg:max-h-[90vh] object-contain rounded-lg shadow-2xl">
+</div>
+
+<script>
+    function openLightbox(src) {
+        const lb = document.getElementById('lightbox');
+        const img = document.getElementById('lightbox-img');
+        if(!lb || !img) return;
+        
+        img.src = src;
+        lb.classList.remove('hidden');
+        lb.classList.add('flex');
+        
+        // Timeout to allow display:flex to apply before transition
+        setTimeout(() => {
+            lb.classList.remove('opacity-0');
+        }, 10);
+    }
+
+    function closeLightbox() {
+        const lb = document.getElementById('lightbox');
+        if(!lb) return;
+        
+        lb.classList.add('opacity-0');
+        setTimeout(() => {
+            lb.classList.add('hidden');
+            lb.classList.remove('flex');
+            document.getElementById('lightbox-img').src = ''; // Clear memory
+        }, 300);
+    }
+</script>
