@@ -5,8 +5,8 @@
             Our designs are born from the intersection of light, material, and human experience. 
             We don't just build structures; we create environments that breathe and evolve.
         </p>
-        <a href="#" class="inline-block px-10 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-xl">
+        <button type="button" class="inline-block px-10 py-4 bg-black text-white dark:bg-white dark:text-black rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-xl" data-drawer-trigger="true" data-drawer-title="Our Philosophy" data-drawer-subtitle="The Studio">
             Read Story
-        </a>
+        </button>
     </div>
 </section>

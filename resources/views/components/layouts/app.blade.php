@@ -18,9 +18,9 @@
     <div id="three-container" class="fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
 
     <!-- Navegación -->
-    <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-auto mix-blend-difference text-white">
-        <a href="#hero-section" class="font-medium text-lg tracking-tighter hover:text-[#FF4433] transition-colors duration-300">ARCH.STUDIO</a>
-        <nav class="flex gap-6 text-sm font-medium uppercase tracking-widest">
+    <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-none mix-blend-difference text-white">
+        <a href="#hero-section" class="font-medium text-lg tracking-tighter hover:text-[#FF4433] transition-colors duration-300 pointer-events-auto">ARCH.STUDIO</a>
+        <nav class="flex gap-6 text-sm font-medium uppercase tracking-widest pointer-events-auto">
             <a href="#about" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">About</a>
             <a href="#portfolio" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Portfolio</a>
             <a href="#contact" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Contact</a>
@@ -36,5 +36,6 @@
         &copy; {{ date('Y') }} Architect Portfolio. Built with Laravel + Three.js
     </footer>
 
+    @stack('modals')
 </body>
 </html>

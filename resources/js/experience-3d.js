@@ -135,6 +135,37 @@ export class Experience3D {
                 });
             });
         });
+
+        // Spatial UX Drawer Integration
+        window.addEventListener('app:drawerOpened', () => {
+            gsap.to(this.camera.position, {
+                z: -30,
+                duration: 1.5,
+                ease: "power3.inOut",
+                overwrite: "auto"
+            });
+            gsap.to(this.camera.rotation, {
+                y: -0.15,
+                duration: 1.5,
+                ease: "power3.inOut",
+                overwrite: "auto"
+            });
+        });
+
+        window.addEventListener('app:drawerClosed', () => {
+            gsap.to(this.camera.position, {
+                z: 0,
+                duration: 1.5,
+                ease: "power3.inOut",
+                overwrite: "auto"
+            });
+            gsap.to(this.camera.rotation, {
+                y: 0,
+                duration: 1.5,
+                ease: "power3.inOut",
+                overwrite: "auto"
+            });
+        });
     }
 
     render() {
