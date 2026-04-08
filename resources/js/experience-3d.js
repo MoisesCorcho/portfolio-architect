@@ -12,7 +12,7 @@ export class Experience3D {
         if (!this.container) return;
 
         this.scene = new THREE.Scene();
-        this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 5000);
+        this.camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 5000);
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         
         this.init();
@@ -85,6 +85,46 @@ export class Experience3D {
             this.camera.aspect = window.innerWidth / window.innerHeight;
             this.camera.updateProjectionMatrix();
             this.renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Portfolio Bento Grid micro-interactions
+        const bentoItems = document.querySelectorAll('.bento-item');
+        bentoItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // Pequeño zoom o paneo cuando se hace hover en un proyecto
+                gsap.to(this.camera.position, {
+                    z: this.camera.position.z - 5,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            });
+            item.addEventListener('mouseleave', () => {
+                gsap.to(this.camera.position, {
+                    z: this.camera.position.z + 5,
+                    duration: 0.8,
+                    ease: "power2.out"
+                });
+            });
+        });
+
+        // Contact Form micro-interactions
+        const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
+        inputs.forEach(input => {
+            input.addEventListener('focus', () => {
+                // Rotación leve de la cámara hacia un "gesto de escucha"
+                gsap.to(this.camera.position, {
+                    x: this.camera.position.x + 2,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
+            input.addEventListener('blur', () => {
+                gsap.to(this.camera.position, {
+                    x: this.camera.position.x - 2,
+                    duration: 1,
+                    ease: "power2.out"
+                });
+            });
         });
     }
 
