@@ -18,12 +18,12 @@
     <div id="three-container" class="fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
 
     <!-- Navegación -->
-    <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-auto">
-        <a href="#" class="font-medium text-lg tracking-tighter">ARCH.STUDIO</a>
-        <nav class="flex gap-6 text-sm font-medium uppercase tracking-widest opacity-70 hover:opacity-100 transition-opacity">
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-            <a href="#contact">Contact</a>
+    <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-auto mix-blend-difference text-white">
+        <a href="#hero-section" class="font-medium text-lg tracking-tighter hover:text-[#FF4433] transition-colors duration-300">ARCH.STUDIO</a>
+        <nav class="flex gap-6 text-sm font-medium uppercase tracking-widest">
+            <a href="#about" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">About</a>
+            <a href="#portfolio" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Portfolio</a>
+            <a href="#contact" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Contact</a>
         </nav>
     </header>
 

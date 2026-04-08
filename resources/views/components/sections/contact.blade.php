@@ -24,11 +24,12 @@
                 <label for="message" class="absolute left-2 top-8 text-black/50 dark:text-white/50 transition-all peer-focus:top-0 peer-focus:text-xs peer-focus:text-[#FF4433] peer-valid:top-0 peer-valid:text-xs">Project Details</label>
             </div>
             <div class="flex justify-center pt-8">
-                <button type="submit" class="group relative px-12 py-5 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold uppercase tracking-widest overflow-hidden">
-                    <span class="relative z-10 group-hover:text-white transition-colors duration-300 mix-blend-difference">Commence</span>
+                <button type="submit" class="group relative px-12 py-5 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold uppercase tracking-widest overflow-hidden transition-colors duration-300">
+                    <span class="relative z-10 group-hover:text-white transition-colors duration-300">Commence</span>
                     <div class="absolute inset-0 h-full w-full bg-[#FF4433] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </button>
             </div>
+
         </form>
     </div>
 </section>

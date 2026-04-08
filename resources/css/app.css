@@ -10,3 +10,7 @@
     --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+

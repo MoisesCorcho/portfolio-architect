@@ -13,6 +13,12 @@ export class Experience3D {
 
         this.scene = new THREE.Scene();
         this.camera = new THREE.PerspectiveCamera(20, window.innerWidth / window.innerHeight, 0.1, 5000);
+        
+        // Camera Container for ScrollTrigger
+        this.cameraContainer = new THREE.Group();
+        this.cameraContainer.add(this.camera);
+        this.scene.add(this.cameraContainer);
+        
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         
         this.init();
@@ -32,8 +38,9 @@ export class Experience3D {
         sunLight.position.set(5, 10, 5);
         this.scene.add(sunLight);
 
-        // Posición Inicial de cámara (Afuera)
-        this.camera.position.set(100, 50, 150);
+        // Posición Inicial de cámara en el contenedor
+        this.cameraContainer.position.set(100, 50, 150);
+        this.camera.position.set(0, 0, 0); // La cámara empieza en el centro de su contenedor
         this.camera.lookAt(0, 0, 0);
 
         this.loadModel();
@@ -74,10 +81,10 @@ export class Experience3D {
             }
         });
 
-        // 1. A unos valores "por defecto" para probar que el scroll anda
-        tl.to(this.camera.position, { x: -80, y: 30, z: 100, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "about")
-          .to(this.camera.position, { x: 50, y: 150, z: 20, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "portfolio")
-          .to(this.camera.position, { x: 120, y: 20, z: -80, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "contact");
+        // Animamos el CONTENEDOR para el scroll
+        tl.to(this.cameraContainer.position, { x: -80, y: 30, z: 100, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "about")
+          .to(this.cameraContainer.position, { x: 50, y: 150, z: 20, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "portfolio")
+          .to(this.cameraContainer.position, { x: 120, y: 20, z: -80, onUpdate: () => this.camera.lookAt(0, 0, 0) }, "contact");
     }
 
     setupEvents() {
@@ -87,42 +94,44 @@ export class Experience3D {
             this.renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Portfolio Bento Grid micro-interactions
+        // Portfolio Bento Grid micro-interactions (Z-Offset)
         const bentoItems = document.querySelectorAll('.bento-item');
         bentoItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
-                // Pequeño zoom o paneo cuando se hace hover en un proyecto
                 gsap.to(this.camera.position, {
-                    z: this.camera.position.z - 5,
+                    z: -5,
                     duration: 0.8,
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    overwrite: "auto"
                 });
             });
             item.addEventListener('mouseleave', () => {
                 gsap.to(this.camera.position, {
-                    z: this.camera.position.z + 5,
+                    z: 0,
                     duration: 0.8,
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    overwrite: "auto"
                 });
             });
         });
 
-        // Contact Form micro-interactions
+        // Contact Form micro-interactions (X-Offset)
         const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');
         inputs.forEach(input => {
             input.addEventListener('focus', () => {
-                // Rotación leve de la cámara hacia un "gesto de escucha"
                 gsap.to(this.camera.position, {
-                    x: this.camera.position.x + 2,
+                    x: 2,
                     duration: 1,
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    overwrite: "auto"
                 });
             });
             input.addEventListener('blur', () => {
                 gsap.to(this.camera.position, {
-                    x: this.camera.position.x - 2,
+                    x: 0,
                     duration: 1,
-                    ease: "power2.out"
+                    ease: "power2.out",
+                    overwrite: "auto"
                 });
             });
         });
