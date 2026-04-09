@@ -202,12 +202,12 @@ export class Experience3D {
 
         // 5. PORTFOLIO a CONTACT (Vista desde la derecha, UI a la izquierda)
         .to(this.cameraContainer.position, { 
-            x: 80, y: 30, z: 100, 
+            x: 150, y: 30, z: 70, 
             duration: 1,
             onUpdate: updateCamera 
         })
-        .to(this.cameraTarget, { x: 0, y: 0, z: 0, duration: 1 }, "<")
-        .to(this.camera, { fov: 20, duration: 1, onUpdate: updateCamera }, "<"); // Mismo FOV que en About
+        .to(this.cameraTarget, { x: 0, y: 0, z: 10, duration: 1 }, "<")
+        .to(this.camera, { fov: 20, duration: 1, onUpdate: updateCamera }, "<")
 
         // Fin de las interacciones
     }
