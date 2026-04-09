@@ -219,7 +219,8 @@ export class Experience3D {
             this.renderer.setSize(window.innerWidth, window.innerHeight);
         });
 
-        // Portfolio Bento Grid micro-interactions (Z-Offset)
+        // Portfolio Bento Grid micro-interactions (Desactivado por petición del usuario)
+        /*
         const bentoItems = document.querySelectorAll('.bento-item');
         bentoItems.forEach(item => {
             item.addEventListener('mouseenter', () => {
@@ -239,6 +240,7 @@ export class Experience3D {
                 });
             });
         });
+        */
 
         // Contact Form micro-interactions (X-Offset)
         const inputs = document.querySelectorAll('.contact-form input, .contact-form textarea');

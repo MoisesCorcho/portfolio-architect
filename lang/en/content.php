@@ -7,9 +7,10 @@ return [
         'contact' => 'Contact',
     ],
     'hero' => [
-        'title_1' => 'JOHN',
-        'title_2' => 'DOE',
-        'subtitle' => 'architect\'s portfolio',
+        'title_1' => 'PORTFOLIO',
+        'title_2' => 'ARCHITECTURE',
+        'subtitle' => 'Residential Architecture',
+        'metadata' => 'John Doe / Selected Projects / 2021-23',
     ],
     'about' => [
         'title' => 'CRAFTING SPACES',
