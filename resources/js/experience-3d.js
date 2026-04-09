@@ -150,7 +150,10 @@ export class Experience3D {
     setupScrollAnimations() {
         // En lugar de mirar siempre al 0,0,0, creamos un vector objetivo que también vamos a animar.
         this.cameraTarget = new THREE.Vector3(0, 0, 0);
-        const updateCamera = () => this.camera.lookAt(this.cameraTarget);
+        const updateCamera = () => {
+            this.camera.lookAt(this.cameraTarget);
+            this.camera.updateProjectionMatrix();
+        };
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -164,31 +167,47 @@ export class Experience3D {
         // 1. HERO a ABOUT (Exterior, acercándonos)
         tl.to(this.cameraContainer.position, {
             x: -80, y: 30, z: 100, 
+            duration: 1,
             onUpdate: updateCamera 
         })
-        .to(this.cameraTarget, { x: 0, y: 0, z: 0 }, "<")
+        .to(this.cameraTarget, { x: 0, y: 0, z: 0, duration: 1 }, "<")
+        .to(this.camera, { fov: 20, duration: 1, onUpdate: updateCamera }, "<")
 
-        // 2. ABOUT a RESUME (Nos metemos adentro de la casa)
-        // Valores tentativos para buscar el interior. 
+        // 2. ABOUT a RESUME (staircase and exterior door.)
         .to(this.cameraContainer.position, { 
-            x: -5, y: 5, z: 15, 
+            x: -23.5, y: 5.5, z: 39.4, 
+            duration: 1,
             onUpdate: updateCamera 
         })
-        .to(this.cameraTarget, { x: -20, y: 10, z: -10 }, "<") // Mirando a la escalera / ventanal
+        .to(this.cameraTarget, { x: -23.4, y: 5.1, z: 19.4, duration: 1 }, "<") // Mirando a la escalera
+        .to(this.camera, { fov: 20, duration: 1, onUpdate: updateCamera }, "<")
 
-        // 3. RESUME a PORTFOLIO (Extreme Close Up Textura / Abstracción)
+        // 3. RESUME a PORTFOLIO (1/2: Frente a la puerta)
         .to(this.cameraContainer.position, { 
-            x: 5, y: 10, z: 5, 
+            x: -1.9, y: -7.4, z: 26.8, 
+            duration: 0.5,
             onUpdate: updateCamera 
         })
-        .to(this.cameraTarget, { x: 5, y: 10, z: -2 }, "<") // Mirar a la pared cercana
+        .to(this.cameraTarget, { x: -4.5, y: -7.7, z: 20.2, duration: 0.5 }, "<") // Mirando a la puerta
+        .to(this.camera, { fov: 20, duration: 0.5, onUpdate: updateCamera }, "<")
 
-        // 4. PORTFOLIO a CONTACT (Mirar hacia afuera/arriba)
+        // 4. RESUME a PORTFOLIO (2/2: Adentro de la casa)
         .to(this.cameraContainer.position, { 
-            x: 0, y: 20, z: 20, 
+            x: -20.2, y: -8.2, z: -16.3, 
+            duration: 0.5,
             onUpdate: updateCamera 
         })
-        .to(this.cameraTarget, { x: 0, y: 50, z: -100 }, "<");
+        .to(this.cameraTarget, { x: -0.3, y: -6.5, z: -16.1, duration: 0.5 }, "<") // Mirando al ventanal/escalera
+        .to(this.camera, { fov: 48, duration: 0.5, onUpdate: updateCamera }, "<") // Abrimos el lente (Gran angular)
+
+        // 5. PORTFOLIO a CONTACT (Vista desde la derecha, UI a la izquierda)
+        .to(this.cameraContainer.position, { 
+            x: 80, y: 30, z: 100, 
+            duration: 1,
+            onUpdate: updateCamera 
+        })
+        .to(this.cameraTarget, { x: 0, y: 0, z: 0, duration: 1 }, "<")
+        .to(this.camera, { fov: 20, duration: 1, onUpdate: updateCamera }, "<"); // Mismo FOV que en About
 
         // Fin de las interacciones
     }
