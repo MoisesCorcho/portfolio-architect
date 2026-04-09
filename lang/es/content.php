@@ -21,6 +21,62 @@ return [
         'drawer_bio_2' => 'Con más de 15 años de experiencia internacional, hemos diseñado proyectos que trascienden modas pasajeras, buscando una pureza estética que resista el polvo del tiempo. Desde grandes centros urbanos hasta retiros remotos y en silencio, nuestro compromiso es con la materia.',
         'drawer_image' => 'images/building/placeholder/building1.jpg',
     ],
+    'resume' => [
+        'title' => 'TRAYECTORIA',
+        'subtitle' => 'PROFESIONAL',
+        'experience_title' => 'Experiencia',
+        'education_title' => 'Educación',
+        'skills_title' => 'Habilidades Clave',
+        'experience' => [
+            [
+                'title' => 'Asistente Administrativa y de Dibujo',
+                'company' => 'Boland Woodworking',
+                'years' => '2021 - 2022',
+                'description' => 'Documentación de proyectos, dibujo de construcción de muebles a medida, levantamientos métricos.'
+            ],
+            [
+                'title' => 'Asistente de Investigación',
+                'company' => 'Synesthetic Research & Design Lab, Universidad Jefferson',
+                'years' => '2021 - Presente',
+                'description' => 'Investigación literaria; preparación de dibujos para presentaciones.'
+            ],
+            [
+                'title' => 'Educadora, Grados K-8',
+                'company' => 'Múltiples Escuelas Waldorf',
+                'years' => '2009 - 2019',
+                'description' => 'Profesora de artes del lenguaje, matemáticas, ciencias, historia, educación al aire libre y arte.'
+            ],
+            [
+                'title' => 'Asistente de Programas',
+                'company' => 'EarthPledge NYC & Médicos Sin Fronteras',
+                'years' => '2002 - 2006',
+                'description' => 'Coordinación de programas de educación pública; investigación; promoción y divulgación.'
+            ],
+        ],
+        'education' => [
+            [
+                'degree' => 'Máster en Arquitectura de Interiores',
+                'school' => 'Universidad Thomas Jefferson',
+                'year' => '2023',
+            ],
+            [
+                'degree' => 'Certificado de Enseñanza Waldorf',
+                'school' => 'Universidad Antioch',
+                'year' => '2013',
+            ],
+            [
+                'degree' => 'Licenciatura en Estudios Ambientales',
+                'school' => 'Universidad de la Ciudad de Nueva York',
+                'year' => '2009',
+            ],
+        ],
+        'skills' => [
+            'Autodesk Revit', 'AutoCad', 'Sketchup', 'Rhino', 
+            'Planificación Espacial', 'Investigación de Diseño', 'Renderizado 3D', 
+            'Bocetaje', 'Visualización de Datos', 'Adobe Creative Suite', 
+            'Visualización con IA', 'Desarrollo de Presentaciones'
+        ]
+    ],
     'portfolio' => [
         'title_1' => 'PROYECTOS',
         'title_2' => 'DESTACADOS',

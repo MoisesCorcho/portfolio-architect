@@ -21,6 +21,62 @@ return [
         'drawer_bio_2' => 'With over 15 years of international experience, we have designed projects that transcend passing trends, seeking an aesthetic purity that resists the dust of time. From large urban centers to quiet, remote retreats, our commitment is to the material.',
         'drawer_image' => 'images/building/placeholder/building1.jpg',
     ],
+    'resume' => [
+        'title' => 'PROFESSIONAL',
+        'subtitle' => 'JOURNEY',
+        'experience_title' => 'Experience',
+        'education_title' => 'Education',
+        'skills_title' => 'Core Skills',
+        'experience' => [
+            [
+                'title' => 'Drafting & Admin. Assistant',
+                'company' => 'Boland Woodworking',
+                'years' => '2021 - 2022',
+                'description' => 'Project documentation, custom furniture and casework construction drawing preparation, measured survey.'
+            ],
+            [
+                'title' => 'Research Assistant',
+                'company' => 'Synesthetic Research & Design Lab, Jefferson University',
+                'years' => '2021 - Present',
+                'description' => 'Literary research; presentation drawing preparation.'
+            ],
+            [
+                'title' => 'Educator, Grades K-8',
+                'company' => 'Multiple Waldorf Schools',
+                'years' => '2009 - 2019',
+                'description' => 'Teacher for language arts, math, science, history, outdoor education, and art.'
+            ],
+            [
+                'title' => 'Program Assistant',
+                'company' => 'EarthPledge NYC & Doctors Without Borders',
+                'years' => '2002 - 2006',
+                'description' => 'Public education program coordination; research; advocacy and outreach.'
+            ],
+        ],
+        'education' => [
+            [
+                'degree' => 'MS Interior Architecture',
+                'school' => 'Thomas Jefferson University',
+                'year' => '2023',
+            ],
+            [
+                'degree' => 'Waldorf Teaching Certificate',
+                'school' => 'Antioch University',
+                'year' => '2013',
+            ],
+            [
+                'degree' => 'BA Environmental Studies',
+                'school' => 'City University of New York',
+                'year' => '2009',
+            ],
+        ],
+        'skills' => [
+            'Autodesk Revit', 'AutoCad', 'Sketchup', 'Rhino', 
+            'Spatial Planning', 'Design Research', '3D Rendering', 
+            'Sketching', 'Data Visualization', 'Adobe Creative Suite', 
+            'AI Assisted Visualization', 'Presentation Development'
+        ]
+    ],
     'portfolio' => [
         'title_1' => 'SELECTED',
         'title_2' => 'PROJECTS',
