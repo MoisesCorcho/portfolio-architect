@@ -18,10 +18,13 @@
     <div id="three-container" class="fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
 
     <!-- Navegación -->
-    <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-none mix-blend-difference text-white">
+    <header class="fixed top-0 w-full z-[70] p-6 lg:p-8 flex justify-between items-center pointer-events-none mix-blend-difference text-white">
         <a href="#hero-section" class="font-medium text-lg tracking-tighter hover:text-[#FF4433] transition-colors duration-300 pointer-events-auto">ARCH.STUDIO</a>
-        <nav class="flex gap-6 items-center text-sm font-medium uppercase tracking-widest pointer-events-auto">
+        
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex gap-6 items-center text-sm font-medium uppercase tracking-widest pointer-events-auto">
             <a href="#about" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.about') }}</a>
+            <a href="#resume" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.resume') }}</a>
             <a href="#portfolio" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.portfolio') }}</a>
             <a href="#contact" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.contact') }}</a>
             
@@ -33,7 +36,47 @@
                 @endif
             </div>
         </nav>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-toggle" class="lg:hidden flex flex-col gap-1.5 pointer-events-auto group focus:outline-none" aria-label="Toggle Menu">
+            <span class="w-8 h-0.5 bg-white transition-all duration-300 group-[.open]:rotate-45 group-[.open]:translate-y-2"></span>
+            <span class="w-8 h-0.5 bg-white transition-all duration-300 group-[.open]:opacity-0"></span>
+            <span class="w-8 h-0.5 bg-white transition-all duration-300 group-[.open]:-rotate-45 group-[.open]:-translate-y-2"></span>
+        </button>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 lg:hidden ease-expo">
+        <nav class="flex flex-col items-center gap-8 text-2xl font-display font-bold uppercase tracking-[0.2em] text-white">
+            <a href="#about" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.about') }}</a>
+            <a href="#resume" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.resume') }}</a>
+            <a href="#portfolio" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.portfolio') }}</a>
+            <a href="#contact" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.contact') }}</a>
+        </nav>
+        
+        <div class="mt-8 pt-8 border-t border-white/10 flex gap-6 text-sm font-bold tracking-widest text-white/40">
+            <a href="{{ route('lang.switch', 'en') }}" class="{{ app()->getLocale() == 'en' ? 'text-white' : '' }}">EN</a>
+            <a href="{{ route('lang.switch', 'es') }}" class="{{ app()->getLocale() == 'es' ? 'text-white' : '' }}">ES</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+
+            const toggleMenu = () => {
+                const isOpen = toggle.classList.toggle('open');
+                menu.classList.toggle('translate-x-full', !isOpen);
+                menu.classList.toggle('translate-x-0', isOpen);
+                document.body.style.overflow = isOpen ? 'hidden' : '';
+            };
+
+            toggle.addEventListener('click', toggleMenu);
+            links.forEach(link => link.addEventListener('click', toggleMenu));
+        });
+    </script>
 
     <!-- Contenido -->
     <main class="relative z-10">

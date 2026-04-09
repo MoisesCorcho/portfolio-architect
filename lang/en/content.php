@@ -3,23 +3,81 @@
 return [
     'navbar' => [
         'about' => 'About',
+        'resume' => 'Resume',
         'portfolio' => 'Portfolio',
         'contact' => 'Contact',
     ],
     'hero' => [
-        'title_1' => 'JOHN',
-        'title_2' => 'DOE',
-        'subtitle' => 'architect\'s portfolio',
+        'title_1' => 'PORTFOLIO',
+        'title_2' => 'ARCHITECTURE',
+        'subtitle' => 'Residential Architecture',
+        'metadata' => 'John Doe / Selected Projects / 2021-23',
     ],
     'about' => [
-        'title' => 'CRAFTING SPACES',
-        'description' => 'Our designs are born from the intersection of light, material, and human experience. We don\'t just build structures; we create environments that breathe and evolve.',
+        'title' => 'DESIGNING HOMES',
+        'description' => 'I design spaces with a deep respect for how people experience and live within their homes. My approach blends well-being, functionality, and aesthetics, always aiming for sustainable solutions that connect people with their everyday environments.',
         'button' => 'Read Story',
-        'drawer_title' => 'Our Philosophy',
+        'drawer_title' => 'My Approach',
         'drawer_subtitle' => 'The Studio',
-        'drawer_bio_1' => 'We firmly believe in the transformative power of architecture. Every line we draw and every material we choose has the purpose of connecting people with their surroundings, generating introspective, sustainable, and highly livable spaces.',
-        'drawer_bio_2' => 'With over 15 years of international experience, we have designed projects that transcend passing trends, seeking an aesthetic purity that resists the dust of time. From large urban centers to quiet, remote retreats, our commitment is to the material.',
-        'drawer_image' => 'images/building/placeholder/building1.jpg',
+        'drawer_bio_1' => 'Before focusing on residential architecture, I developed a strong interest in the relationship between people and the spaces they inhabit. This perspective allows me to design homes that not only serve a purpose but also enhance the quality of life of those who live in them.',
+        'drawer_bio_2' => 'Today, I apply that vision to every project, creating homes centered on comfort, efficiency, and harmony with their surroundings. From family houses to contemporary residences, my goal is to design spaces that are lasting, functional, and emotionally meaningful.',
+        'drawer_image' => 'images/building/placeholder/ai-person.jpg',
+    ],
+    'resume' => [
+        'title' => 'PROFESSIONAL',
+        'subtitle' => 'JOURNEY',
+        'experience_title' => 'Experience',
+        'education_title' => 'Education',
+        'skills_title' => 'Core Skills',
+        'experience' => [
+            [
+                'title' => 'Drafting & Admin. Assistant',
+                'company' => 'Boland Woodworking',
+                'years' => '2021 - 2022',
+                'description' => 'Project documentation, custom furniture and casework construction drawing preparation, measured survey.'
+            ],
+            [
+                'title' => 'Research Assistant',
+                'company' => 'Synesthetic Research & Design Lab, Jefferson University',
+                'years' => '2021 - Present',
+                'description' => 'Literary research; presentation drawing preparation.'
+            ],
+            [
+                'title' => 'Educator, Grades K-8',
+                'company' => 'Multiple Waldorf Schools',
+                'years' => '2009 - 2019',
+                'description' => 'Teacher for language arts, math, science, history, outdoor education, and art.'
+            ],
+            [
+                'title' => 'Program Assistant',
+                'company' => 'EarthPledge NYC & Doctors Without Borders',
+                'years' => '2002 - 2006',
+                'description' => 'Public education program coordination; research; advocacy and outreach.'
+            ],
+        ],
+        'education' => [
+            [
+                'degree' => 'MS Interior Architecture',
+                'school' => 'Thomas Jefferson University',
+                'year' => '2023',
+            ],
+            [
+                'degree' => 'Waldorf Teaching Certificate',
+                'school' => 'Antioch University',
+                'year' => '2013',
+            ],
+            [
+                'degree' => 'BA Environmental Studies',
+                'school' => 'City University of New York',
+                'year' => '2009',
+            ],
+        ],
+        'skills' => [
+            'Autodesk Revit', 'AutoCad', 'Sketchup', 'Rhino', 
+            'Spatial Planning', 'Design Research', '3D Rendering', 
+            'Sketching', 'Data Visualization', 'Adobe Creative Suite', 
+            'AI Assisted Visualization', 'Presentation Development'
+        ]
     ],
     'portfolio' => [
         'title_1' => 'SELECTED',

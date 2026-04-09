@@ -12,3 +12,8 @@ Route::get('/lang/{locale}', function ($locale) {
     }
     return redirect()->back();
 })->name('lang.switch');
+
+// Ruta oculta de desarrollo para posicionar la cámara 3D
+Route::get('/3d-dev', function () {
+    return view('3d-dev');
+});

@@ -19,6 +19,7 @@ function initHeroAnimations() {
     const tl = gsap.timeline();
     tl.to('.gs-reveal', {
         y: 0,
+        scaleX: 1,
         opacity: 1,
         duration: 1.2,
         stagger: 0.2,

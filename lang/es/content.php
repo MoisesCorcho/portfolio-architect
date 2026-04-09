@@ -3,23 +3,81 @@
 return [
     'navbar' => [
         'about' => 'Estudio',
+        'resume' => 'Trayectoria',
         'portfolio' => 'Proyectos',
         'contact' => 'Contacto',
     ],
     'hero' => [
-        'title_1' => 'JOHN',
-        'title_2' => 'DOE',
-        'subtitle' => 'portafolio de arquitectura',
+        'title_1' => 'PORTAFOLIO',
+        'title_2' => 'ARQUITECTURA',
+        'subtitle' => 'Arquitectura Residencial',
+        'metadata' => 'John Doe / Proyectos Seleccionados / 2021-23',
     ],
     'about' => [
-        'title' => 'CRAFTING SPACES',
-        'description' => 'Nuestros diseños nacen de la intersección entre la luz, la materia y la experiencia humana. No solo construimos estructuras; creamos entornos que respiran y evolucionan.',
+        'title' => 'DISEÑANDO HOGARES',
+        'description' => 'Diseño espacios con un profundo respeto por la forma en que las personas habitan y experimentan sus hogares. Mi enfoque integra bienestar, funcionalidad y estética, buscando siempre soluciones sostenibles que conecten a las personas con su entorno cotidiano.',
         'button' => 'Leer Historia',
-        'drawer_title' => 'Nuestra Filosofía',
+        'drawer_title' => 'Mi Enfoque',
         'drawer_subtitle' => 'El Estudio',
-        'drawer_bio_1' => 'Creemos firmemente en el poder transformador de la arquitectura. Cada línea que trazamos y cada material que elegimos tiene el propósito de conectar a las personas con su entorno, generando espacios introspectivos, sostenibles y sumamente habitables.',
-        'drawer_bio_2' => 'Con más de 15 años de experiencia internacional, hemos diseñado proyectos que trascienden modas pasajeras, buscando una pureza estética que resista el polvo del tiempo. Desde grandes centros urbanos hasta retiros remotos y en silencio, nuestro compromiso es con la materia.',
-        'drawer_image' => 'images/building/placeholder/building1.jpg',
+        'drawer_bio_1' => 'Antes de dedicarme a la arquitectura residencial, desarrollé un interés profundo por la relación entre las personas y los espacios que habitan. Esta perspectiva me permite diseñar viviendas que no solo cumplen una función, sino que también mejoran la calidad de vida de quienes las habitan.',
+        'drawer_bio_2' => 'Hoy, aplico esa visión en cada proyecto, creando hogares pensados para el confort, la eficiencia y la armonía con el entorno. Desde casas familiares hasta residencias contemporáneas, mi objetivo es diseñar espacios duraderos, funcionales y emocionalmente significativos.',
+        'drawer_image' => 'images/building/placeholder/ai-person.jpg',
+    ],
+    'resume' => [
+        'title' => 'TRAYECTORIA',
+        'subtitle' => 'PROFESIONAL',
+        'experience_title' => 'Experiencia',
+        'education_title' => 'Educación',
+        'skills_title' => 'Habilidades Clave',
+        'experience' => [
+            [
+                'title' => 'Asistente Administrativa y de Dibujo',
+                'company' => 'Boland Woodworking',
+                'years' => '2021 - 2022',
+                'description' => 'Documentación de proyectos, dibujo de construcción de muebles a medida, levantamientos métricos.'
+            ],
+            [
+                'title' => 'Asistente de Investigación',
+                'company' => 'Synesthetic Research & Design Lab, Universidad Jefferson',
+                'years' => '2021 - Presente',
+                'description' => 'Investigación literaria; preparación de dibujos para presentaciones.'
+            ],
+            [
+                'title' => 'Educadora, Grados K-8',
+                'company' => 'Múltiples Escuelas Waldorf',
+                'years' => '2009 - 2019',
+                'description' => 'Profesora de artes del lenguaje, matemáticas, ciencias, historia, educación al aire libre y arte.'
+            ],
+            [
+                'title' => 'Asistente de Programas',
+                'company' => 'EarthPledge NYC & Médicos Sin Fronteras',
+                'years' => '2002 - 2006',
+                'description' => 'Coordinación de programas de educación pública; investigación; promoción y divulgación.'
+            ],
+        ],
+        'education' => [
+            [
+                'degree' => 'Máster en Arquitectura de Interiores',
+                'school' => 'Universidad Thomas Jefferson',
+                'year' => '2023',
+            ],
+            [
+                'degree' => 'Certificado de Enseñanza Waldorf',
+                'school' => 'Universidad Antioch',
+                'year' => '2013',
+            ],
+            [
+                'degree' => 'Licenciatura en Estudios Ambientales',
+                'school' => 'Universidad de la Ciudad de Nueva York',
+                'year' => '2009',
+            ],
+        ],
+        'skills' => [
+            'Autodesk Revit', 'AutoCad', 'Sketchup', 'Rhino', 
+            'Planificación Espacial', 'Investigación de Diseño', 'Renderizado 3D', 
+            'Bocetaje', 'Visualización de Datos', 'Adobe Creative Suite', 
+            'Visualización con IA', 'Desarrollo de Presentaciones'
+        ]
     ],
     'portfolio' => [
         'title_1' => 'PROYECTOS',
