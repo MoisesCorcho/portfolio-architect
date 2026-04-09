@@ -20,10 +20,18 @@
     <!-- Navegación -->
     <header class="fixed top-0 w-full z-50 p-6 lg:p-8 flex justify-between items-center pointer-events-none mix-blend-difference text-white">
         <a href="#hero-section" class="font-medium text-lg tracking-tighter hover:text-[#FF4433] transition-colors duration-300 pointer-events-auto">ARCH.STUDIO</a>
-        <nav class="flex gap-6 text-sm font-medium uppercase tracking-widest pointer-events-auto">
-            <a href="#about" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">About</a>
-            <a href="#portfolio" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Portfolio</a>
-            <a href="#contact" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">Contact</a>
+        <nav class="flex gap-6 items-center text-sm font-medium uppercase tracking-widest pointer-events-auto">
+            <a href="#about" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.about') }}</a>
+            <a href="#portfolio" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.portfolio') }}</a>
+            <a href="#contact" class="opacity-60 hover:opacity-100 hover:scale-105 transition-all duration-300">{{ __('content.navbar.contact') }}</a>
+            
+            <div class="ml-2 pl-6 border-l border-white/20">
+                @if(app()->getLocale() == 'en')
+                    <a href="{{ route('lang.switch', 'es') }}" class="opacity-60 hover:opacity-100 transition-all duration-300 font-bold">ES</a>
+                @else
+                    <a href="{{ route('lang.switch', 'en') }}" class="opacity-60 hover:opacity-100 transition-all duration-300 font-bold">EN</a>
+                @endif
+            </div>
         </nav>
     </header>
 

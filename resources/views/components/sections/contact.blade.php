@@ -1,8 +1,8 @@
 <section id="contact" class="min-h-screen flex items-center justify-center px-8 lg:px-24 bg-transparent pointer-events-none relative">
     <div class="w-full max-w-4xl p-8 lg:p-16 bg-black/5 dark:bg-white/5 backdrop-blur-3xl rounded-[2.5rem] border border-black/10 dark:border-white/10 pointer-events-auto shadow-2xl gs-fade-up">
         <div class="text-center mb-12">
-            <h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tighter dark:text-white mb-4">LET'S BUILD<br/><span class="text-[#FF4433] italic font-light">TOGETHER</span></h2>
-            <p class="text-xl opacity-60">Ready to start your next visionary project?</p>
+            <h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tighter dark:text-white mb-4">{{ __('content.contact.title') }}<br/><span class="text-[#FF4433] italic font-light">{{ __('content.contact.subtitle') }}</span></h2>
+            <p class="text-xl opacity-60">{{ __('content.contact.description') }}</p>
         </div>
 
         <form class="space-y-6 max-w-2xl mx-auto contact-form">
@@ -25,7 +25,7 @@
             </div>
             <div class="flex justify-center pt-8">
                 <button type="submit" class="group relative px-12 py-5 bg-black dark:bg-white text-white dark:text-black rounded-full font-bold uppercase tracking-widest overflow-hidden transition-colors duration-300">
-                    <span class="relative z-10 group-hover:text-white transition-colors duration-300">Commence</span>
+                    <span class="relative z-10 group-hover:text-white transition-colors duration-300">{{ __('content.contact.button') }}</span>
                     <div class="absolute inset-0 h-full w-full bg-[#FF4433] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
                 </button>
             </div>

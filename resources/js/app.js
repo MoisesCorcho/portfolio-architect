@@ -74,6 +74,34 @@ function initDrawerAnimations() {
             if (title && drawerTitle) drawerTitle.textContent = title;
             if (subtitle && drawerSubtitle) drawerSubtitle.textContent = subtitle;
 
+            if (type === 'project') {
+                const desc1 = trigger.getAttribute('data-drawer-desc1');
+                const desc2 = trigger.getAttribute('data-drawer-desc2');
+                const loc = trigger.getAttribute('data-drawer-location');
+                const area = trigger.getAttribute('data-drawer-area');
+                const year = trigger.getAttribute('data-drawer-year');
+                const role = trigger.getAttribute('data-drawer-role');
+                const img = trigger.getAttribute('data-drawer-img');
+
+                const elDesc1 = document.getElementById('drawer-project-desc1');
+                const elDesc2 = document.getElementById('drawer-project-desc2');
+                const elLoc = document.getElementById('drawer-project-location');
+                const elArea = document.getElementById('drawer-project-area');
+                const elYear = document.getElementById('drawer-project-year');
+                const elRole = document.getElementById('drawer-project-role');
+
+                if (elDesc1) elDesc1.textContent = desc1 || '';
+                if (elDesc2) elDesc2.textContent = desc2 || '';
+                if (elLoc) elLoc.textContent = loc || '';
+                if (elArea) elArea.textContent = area || '';
+                if (elYear) elYear.textContent = year || '';
+                if (elRole) elRole.textContent = role || '';
+                
+                if (img) {
+                    document.querySelectorAll('.drawer-project-gallery-img').forEach(el => el.src = img);
+                }
+            }
+
             openDrawer(type);
         });
     });
