@@ -3,6 +3,7 @@
 return [
     'navbar' => [
         'about' => 'About',
+        'resume' => 'Resume',
         'portfolio' => 'Portfolio',
         'contact' => 'Contact',
     ],
@@ -13,14 +14,14 @@ return [
         'metadata' => 'John Doe / Selected Projects / 2021-23',
     ],
     'about' => [
-        'title' => 'CRAFTING SPACES',
-        'description' => 'Our designs are born from the intersection of light, material, and human experience. We don\'t just build structures; we create environments that breathe and evolve.',
+        'title' => 'DESIGNING HOMES',
+        'description' => 'I design spaces with a deep respect for how people experience and live within their homes. My approach blends well-being, functionality, and aesthetics, always aiming for sustainable solutions that connect people with their everyday environments.',
         'button' => 'Read Story',
-        'drawer_title' => 'Our Philosophy',
+        'drawer_title' => 'My Approach',
         'drawer_subtitle' => 'The Studio',
-        'drawer_bio_1' => 'We firmly believe in the transformative power of architecture. Every line we draw and every material we choose has the purpose of connecting people with their surroundings, generating introspective, sustainable, and highly livable spaces.',
-        'drawer_bio_2' => 'With over 15 years of international experience, we have designed projects that transcend passing trends, seeking an aesthetic purity that resists the dust of time. From large urban centers to quiet, remote retreats, our commitment is to the material.',
-        'drawer_image' => 'images/building/placeholder/building1.jpg',
+        'drawer_bio_1' => 'Before focusing on residential architecture, I developed a strong interest in the relationship between people and the spaces they inhabit. This perspective allows me to design homes that not only serve a purpose but also enhance the quality of life of those who live in them.',
+        'drawer_bio_2' => 'Today, I apply that vision to every project, creating homes centered on comfort, efficiency, and harmony with their surroundings. From family houses to contemporary residences, my goal is to design spaces that are lasting, functional, and emotionally meaningful.',
+        'drawer_image' => 'images/building/placeholder/ai-person.jpg',
     ],
     'resume' => [
         'title' => 'PROFESSIONAL',

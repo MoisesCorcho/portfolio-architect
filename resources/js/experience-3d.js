@@ -21,6 +21,8 @@ export class Experience3D {
         this.scene.add(this.cameraContainer);
         
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap; // Sombras suaves
         
         this.init();
     }
@@ -31,12 +33,30 @@ export class Experience3D {
         this.renderer.setClearColor(0x000000, 0);
         this.container.appendChild(this.renderer.domElement);
 
-        // Iluminación básica
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+        // 1. Luz Ambiente: Simula el rebote de la luz en las superficies
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
         this.scene.add(ambientLight);
 
-        const sunLight = new THREE.DirectionalLight(0xffffff, 1);
-        sunLight.position.set(5, 10, 5);
+        // 2. Luz de Hemisferio: Da un toque de color del cielo y el suelo (Muy Sketchfab)
+        const hemiLight = new THREE.HemisphereLight(0xffffff, 0x444444, 0.8);
+        this.scene.add(hemiLight);
+
+        // 3. Luz del Sol (Directa) - Bajamos el ángulo para que entre por las ventanas
+        const sunLight = new THREE.DirectionalLight(0xffffff, 2.5);
+        sunLight.position.set(120, 100, 100); // Ángulo más bajo (diagonal)
+        sunLight.castShadow = true;
+
+        // Optimización de Sombras
+        sunLight.shadow.mapSize.width = 4096; // Máxima resolución para nitidez
+        sunLight.shadow.mapSize.height = 4096;
+        sunLight.shadow.camera.left = -200;
+        sunLight.shadow.camera.right = 200;
+        sunLight.shadow.camera.top = 200;
+        sunLight.shadow.camera.bottom = -200;
+        sunLight.shadow.camera.near = 0.5;
+        sunLight.shadow.camera.far = 1000;
+        sunLight.shadow.bias = -0.0001; 
+
         this.scene.add(sunLight);
 
         // Posición Inicial de cámara en el contenedor
@@ -57,6 +77,31 @@ export class Experience3D {
 
         loader.load('/models/modern_home.glb', (gltf) => {
             const model = gltf.scene;
+            
+            // Activar sombras en todo el modelo (MESH por MESH)
+            model.traverse((node) => {
+                if (node.isMesh) {
+                    // Truco pro: Si el material es cristal/vidrio, NO debe proyectar sombra
+                    // para que la luz entre a la casa.
+                    const isGlass = node.name.toLowerCase().includes('glass') || 
+                                    node.name.toLowerCase().includes('vidrio') ||
+                                    (node.material && node.material.transparent && node.material.opacity < 1);
+                    
+                    if (isGlass) {
+                        node.castShadow = false; // El sol pasa a través del vidrio
+                        node.receiveShadow = true;
+                    } else {
+                        node.castShadow = true;
+                        node.receiveShadow = true;
+                    }
+
+                    // Mejorar reflejos interiores
+                    if (node.material) {
+                        node.material.envMapIntensity = 1.5;
+                    }
+                }
+            });
+
             this.scene.add(model);
             
             // Auto-escalado a 100 unidades (IMPORTANTE)

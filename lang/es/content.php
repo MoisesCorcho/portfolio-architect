@@ -3,6 +3,7 @@
 return [
     'navbar' => [
         'about' => 'Estudio',
+        'resume' => 'Trayectoria',
         'portfolio' => 'Proyectos',
         'contact' => 'Contacto',
     ],
@@ -13,14 +14,14 @@ return [
         'metadata' => 'John Doe / Proyectos Seleccionados / 2021-23',
     ],
     'about' => [
-        'title' => 'CRAFTING SPACES',
-        'description' => 'Nuestros diseños nacen de la intersección entre la luz, la materia y la experiencia humana. No solo construimos estructuras; creamos entornos que respiran y evolucionan.',
+        'title' => 'DISEÑANDO HOGARES',
+        'description' => 'Diseño espacios con un profundo respeto por la forma en que las personas habitan y experimentan sus hogares. Mi enfoque integra bienestar, funcionalidad y estética, buscando siempre soluciones sostenibles que conecten a las personas con su entorno cotidiano.',
         'button' => 'Leer Historia',
-        'drawer_title' => 'Nuestra Filosofía',
+        'drawer_title' => 'Mi Enfoque',
         'drawer_subtitle' => 'El Estudio',
-        'drawer_bio_1' => 'Creemos firmemente en el poder transformador de la arquitectura. Cada línea que trazamos y cada material que elegimos tiene el propósito de conectar a las personas con su entorno, generando espacios introspectivos, sostenibles y sumamente habitables.',
-        'drawer_bio_2' => 'Con más de 15 años de experiencia internacional, hemos diseñado proyectos que trascienden modas pasajeras, buscando una pureza estética que resista el polvo del tiempo. Desde grandes centros urbanos hasta retiros remotos y en silencio, nuestro compromiso es con la materia.',
-        'drawer_image' => 'images/building/placeholder/building1.jpg',
+        'drawer_bio_1' => 'Antes de dedicarme a la arquitectura residencial, desarrollé un interés profundo por la relación entre las personas y los espacios que habitan. Esta perspectiva me permite diseñar viviendas que no solo cumplen una función, sino que también mejoran la calidad de vida de quienes las habitan.',
+        'drawer_bio_2' => 'Hoy, aplico esa visión en cada proyecto, creando hogares pensados para el confort, la eficiencia y la armonía con el entorno. Desde casas familiares hasta residencias contemporáneas, mi objetivo es diseñar espacios duraderos, funcionales y emocionalmente significativos.',
+        'drawer_image' => 'images/building/placeholder/ai-person.jpg',
     ],
     'resume' => [
         'title' => 'TRAYECTORIA',
