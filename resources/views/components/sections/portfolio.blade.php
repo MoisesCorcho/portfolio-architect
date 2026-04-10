@@ -1,14 +1,14 @@
-<section id="portfolio" class="min-h-screen py-24 flex flex-col justify-center px-8 lg:px-24 bg-transparent pointer-events-none relative">
+<section id="portfolio" class="min-h-screen pt-32 pb-24 flex flex-col justify-center px-8 lg:px-24 bg-transparent pointer-events-none relative">
     <div class="pointer-events-auto w-full max-w-7xl mx-auto gs-fade-up">
-        <div class="flex justify-between items-end mb-12">
-            <h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tight dark:text-white">{!! __('content.portfolio.title_1') !!}<br/>{!! __('content.portfolio.title_2') !!}</h2>
+        <div class="flex justify-between items-end mb-10">
+            <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-display font-bold tracking-tight dark:text-white">{!! __('content.portfolio.title_1') !!}<br/>{!! __('content.portfolio.title_2') !!}</h2>
             <div class="hidden lg:block w-1/3 text-right">
-                <p class="opacity-60 text-lg">{{ __('content.portfolio.subtitle') }}</p>
+                <p class="opacity-60 text-base lg:text-lg">{{ __('content.portfolio.subtitle') }}</p>
             </div>
         </div>
 
         <!-- Bento Grid Structure -->
-        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px]">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[220px]">
             @foreach(__('content.portfolio.projects') as $project)
             <div class="bento-item group {{ $project['grid_class'] }} relative overflow-hidden rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md transition-all duration-500 hover:bg-black/10 dark:hover:bg-white/10 cursor-pointer" 
                  data-project="{{ $project['id'] }}" 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="overflow-x-hidden">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -46,7 +46,7 @@
     </header>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-500 lg:hidden ease-expo">
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center gap-8 translate-x-full pointer-events-none transition-transform duration-500 lg:hidden ease-expo">
         <nav class="flex flex-col items-center gap-8 text-2xl font-display font-bold uppercase tracking-[0.2em] text-white">
             <a href="#about" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.about') }}</a>
             <a href="#resume" class="mobile-link hover:text-[#FF4433] transition-colors">{{ __('content.navbar.resume') }}</a>
@@ -70,6 +70,11 @@
                 const isOpen = toggle.classList.toggle('open');
                 menu.classList.toggle('translate-x-full', !isOpen);
                 menu.classList.toggle('translate-x-0', isOpen);
+                
+                // Toggle pointer events
+                menu.classList.toggle('pointer-events-none', !isOpen);
+                menu.classList.toggle('pointer-events-auto', isOpen);
+                
                 document.body.style.overflow = isOpen ? 'hidden' : '';
             };
 

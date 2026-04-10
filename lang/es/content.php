@@ -18,7 +18,7 @@ return [
         'description' => 'Diseño espacios con un profundo respeto por la forma en que las personas habitan y experimentan sus hogares. Mi enfoque integra bienestar, funcionalidad y estética, buscando siempre soluciones sostenibles que conecten a las personas con su entorno cotidiano.',
         'button' => 'Leer Historia',
         'drawer_title' => 'Mi Enfoque',
-        'drawer_subtitle' => 'El Estudio',
+        'drawer_subtitle' => 'Acerca de mi',
         'drawer_bio_1' => 'Antes de dedicarme a la arquitectura residencial, desarrollé un interés profundo por la relación entre las personas y los espacios que habitan. Esta perspectiva me permite diseñar viviendas que no solo cumplen una función, sino que también mejoran la calidad de vida de quienes las habitan.',
         'drawer_bio_2' => 'Hoy, aplico esa visión en cada proyecto, creando hogares pensados para el confort, la eficiencia y la armonía con el entorno. Desde casas familiares hasta residencias contemporáneas, mi objetivo es diseñar espacios duraderos, funcionales y emocionalmente significativos.',
         'drawer_image' => 'images/building/placeholder/ai-person.jpg',
