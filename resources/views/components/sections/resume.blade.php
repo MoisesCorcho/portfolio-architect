@@ -1,8 +1,8 @@
-<section id="resume" class="min-h-screen py-24 flex flex-col justify-center px-8 lg:px-24 bg-transparent pointer-events-none relative z-10">
+<section id="resume" class="min-h-screen pt-40 pb-24 flex flex-col justify-center px-8 lg:px-24 bg-transparent pointer-events-none relative z-10">
     <div class="pointer-events-auto w-full max-w-7xl mx-auto gs-fade-up">
         
         <div class="flex justify-between items-end mb-12">
-            <h2 class="text-5xl lg:text-7xl font-display font-bold tracking-tight dark:text-white">
+            <h2 class="text-3xl sm:text-4xl lg:text-4xl xl:text-5xl font-display font-bold tracking-tight dark:text-white">
                 {!! __('content.resume.title') !!}<br/>{!! __('content.resume.subtitle') !!}
             </h2>
             <div class="hidden lg:block w-1/3 text-right">

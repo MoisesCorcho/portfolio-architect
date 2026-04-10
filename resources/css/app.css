@@ -12,5 +12,15 @@
 
 html {
     scroll-behavior: smooth;
+    /* Reducimos la fuente base para que todo (paddings, fonts, margins) escale hacia abajo */
+    /* En pantallas grandes (como tu laptop con zoom), esto hace que el contenido respire más */
+    font-size: 13px; 
+}
+
+/* En pantallas realmente grandes (monitores 4k o 2k sin zoom), podemos volver al estándar */
+@media (min-width: 1920px) {
+    html {
+        font-size: 16px;
+    }
 }
 
