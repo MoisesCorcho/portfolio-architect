@@ -14,8 +14,8 @@
 </head>
 <body class="bg-white dark:bg-[#0a0a0a] text-[#1b1b18] dark:text-[#EDEDEC] font-sans selection:bg-[#FF4433] selection:text-white overflow-x-hidden antialiased">
     
-    <!-- Contenedor 3D Fijo al fondo -->
-    <div id="three-container" class="fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
+    <!-- Contenedor 3D Fijo al fondo: Solo se muestra en desktop (md:block) -->
+    <div id="three-container" class="hidden md:block fixed inset-0 z-[-1] w-full h-full pointer-events-none"></div>
 
     <!-- Navegación -->
     <header class="fixed top-0 w-full z-[70] p-6 lg:p-8 flex justify-between items-center pointer-events-none mix-blend-difference text-white">

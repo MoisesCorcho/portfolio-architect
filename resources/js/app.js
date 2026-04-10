@@ -6,8 +6,15 @@ import { Experience3D } from './experience-3d.js';
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener('DOMContentLoaded', () => {
-    // 3D Integration
-    const experience = document.getElementById('three-container') ? new Experience3D('three-container') : null;
+    // 3D Integration: Solo cargamos si NO es mobile (Desktop First Experience)
+    const isMobile = window.innerWidth < 768;
+    const experience = (document.getElementById('three-container') && !isMobile) 
+        ? new Experience3D('three-container') 
+        : null;
+
+    if (isMobile) {
+        console.log("📱 Mobile detectado: Saltando motor 3D para optimizar performance.");
+    }
 
     // UI Animations
     initHeroAnimations();
